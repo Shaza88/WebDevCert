@@ -315,7 +315,7 @@ form#contactForm {
 }
 /* Add this CSS rule to set the width of the contact form to 50% and align it to the left */
 form#contactForm {
-    width: 50%;
+    width: 75%;
     margin: 0; /* Align the form to the left */
 }
 
@@ -334,4 +334,16 @@ form#contactForm {
 label[for="message"] {
     display: block;
     margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+    .hamburger {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1001; /* Ensure it is above other elements */
+    }
+
+    header {
+        padding-top: 50px; /* Add padding to avoid overlap with the hamburger */
+    }
 }
