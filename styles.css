@@ -1,0 +1,337 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+nav {
+    background-color: #444;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start; /* Align nav items to the left */
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+/* Show hamburger menu icon at 768px width */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        float: none;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+section.about-me {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 40px);
+    box-sizing: border-box;
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-card p {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.project-img {
+    max-width: 25%; /* Ensure both images are the same size */
+    height: auto;
+}
+
+section.skills {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skills-list li::before {
+    content: url('path/to/icon.png'); /* Replace with the path to your icon */
+    margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    section.about-me, section.projects, section.skills {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .project-card {
+        padding: 10px;
+        margin: 5px;
+    }
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Vendor prefixes for flexbox */
+.project-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* Vendor prefixes for box-shadow */
+header, section.about-me, section.projects, .project-card, section.skills {
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Vendor prefixes for border-radius */
+header, section.about-me, section.projects, .project-card, section.skills {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+/* Vendor prefixes for box-sizing */
+.project-card {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+form {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form .form-item {
+    margin-bottom: 15px;
+}
+
+form .form-item label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form .form-item input,
+form .form-item textarea,
+form .form-item select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+}
+
+.lightbox img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+body {
+    border-left: 20px solid whi#fff;
+    padding-left: 20px;
+}
+.project-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-img {
+    flex: 0 0 25%; /* Ensure the image takes up 25% of the width */
+    margin-right: 20px; /* Add some space between the image and the details */
+}
+
+.project-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Add this CSS rule to align the label with the top of the textarea */
+label[for="message"] {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Add this CSS rule to set the width of the contact form to 50% */
+form#contactForm {
+    width: 50%;
+    margin: 0; /* Center the form horizontally */
+}
+/* Add this CSS rule to set the width of the contact form to 50% and align it to the left */
+form#contactForm {
+    width: 50%;
+    margin: 0; /* Align the form to the left */
+}
+
+/* Style for error messages */
+#nameError, #emailError, #messageError {
+    color: red;
+}
+
+/* Style for the success message */
+#formMessage {
+    display: none;
+    color: green;
+}
+
+/* Add this CSS rule to align the label with the top of the textarea */
+label[for="message"] {
+    display: block;
+    margin-bottom: 5px;
+}
